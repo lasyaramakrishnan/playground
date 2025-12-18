@@ -1,0 +1,88 @@
+/* ---------- Base reset ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #111;
+  font-family: "Libre Baskerville", serif;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+
+/* ---------- Intro text ---------- */
+.intro {
+  margin-bottom: 72px;
+}
+
+.intro h1 {
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* ---------- Image gallery ---------- */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+figure {
+  margin: 0;
+}
+
+/* ---------- Images ---------- */
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+/* staggered animation */
+figure:nth-child(1) img { animation-delay: 0.1s; }
+figure:nth-child(2) img { animation-delay: 0.2s; }
+figure:nth-child(3) img { animation-delay: 0.3s; }
+figure:nth-child(4) img { animation-delay: 0.4s; }
+
+/* ---------- Footer ---------- */
+.footer {
+  margin-top: 96px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+/* ---------- Animation ---------- */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .intro h1 {
+    font-size: 22px;
+  }
+
+  .container {
+    padding-top: 32px;
+  }
+
+  .gallery {
+    gap: 40px;
+  }
+}
